@@ -1,0 +1,1 @@
+http://10.3.0.134/mfp/api/adapters/javaAdapter/resource/unprotected

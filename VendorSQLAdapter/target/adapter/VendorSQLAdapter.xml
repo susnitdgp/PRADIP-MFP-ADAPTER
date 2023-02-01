@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Licensed Materials - Property of IBM
+	5725-I43 (C) Copyright IBM Corp. 2011, 2016. All Rights Reserved.
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<mfp:adapter name="VendorSQLAdapter"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mfp="http://www.ibm.com/mfp/integration"
+	xmlns:sql="http://www.ibm.com/mfp/integration/sql">
+
+	<displayName>VendorSQLAdapter</displayName>
+	<description>VendorSQLAdapter</description>
+	<connectivity>
+		<connectionPolicy xsi:type="sql:SQLConnectionPolicy">
+			<!-- Example for using a JNDI data source, replace with actual data source name -->
+			<!-- <dataSourceJNDIName>java:/data-source-jndi-name</dataSourceJNDIName> -->
+			
+			<!-- Example for using MySQL connector, do not forget to put the MySQL connector library in the project's lib folder -->
+			<dataSourceDefinition>
+				<driverClass>com.ibm.db2.jcc.DB2Driver</driverClass>
+				<url>jdbc:db2://ecmprddb.ntpc.co.in:50000/PCOMMON</url>
+				<user>db2inst1</user>
+				<password>ProddbPR</password>
+			</dataSourceDefinition> 
+		</connectionPolicy>
+	</connectivity>
+	
+	
+
+	<!-- Replace this with appropriate procedures -->
+	<procedure name="VendorLogin" secured="false"/>
+	
+	<procedure name="fetchSSCList" secured="false"/>
+	<procedure name="fetchPlantList" secured="false"/>
+	
+	<procedure name="fetchNtpcAndSSCData" secured="false"/>
+	<procedure name="fetchPlantData" secured="false"/>
+	
+	<procedure name="feedbackMethod" secured="false"/>
+	
+	<procedure name="registerMobileDevice" secured="false"/>
+	
+	<!--  
+	<procedure name="scopeMethod" secured="true" scope="GoswamiUserLogin"/>
+	-->
+	
+
+</mfp:adapter>

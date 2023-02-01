@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Licensed Materials - Property of IBM
+	5725-I43 (C) Copyright IBM Corp. 2011, 2016. All Rights Reserved.
+	US Government Users Restricted Rights - Use, duplication or
+	disclosure restricted by GSA ADP Schedule Contract with IBM Corp.
+-->
+<mfp:adapter name="SampleSqlAdapter"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:mfp="http://www.ibm.com/mfp/integration"
+	xmlns:sql="http://www.ibm.com/mfp/integration/sql">
+
+	<displayName>SampleSqlAdapter</displayName>
+	<description>SampleSqlAdapter</description>
+	<connectivity>
+		<connectionPolicy xsi:type="sql:SQLConnectionPolicy">
+			<!-- Example for using a JNDI data source, replace with actual data source name -->
+			<dataSourceJNDIName>jdbc/PcommonDS</dataSourceJNDIName>
+			
+			<!-- Example for using DB2 connector, do not forget to put the DB2 connector library in the project's pom.xml file
+			<dataSourceDefinition>
+				<driverClass>com.ibm.db2.jcc.DB2Driver</driverClass>
+				<url>jdbc:db2://10.3.0.96:50000/PCOMMON</url>
+				<user>db2inst1</user>
+				<password>{xor}CzosKzo8Mh9mZ2g=</password>
+			</dataSourceDefinition> 
+			 -->
+		</connectionPolicy>
+	</connectivity>
+
+	<!-- Replace this with appropriate procedures -->
+	<procedure name="getEmployeeDetails" secured="false"/>
+	<procedure name="getPendingTaskDetails" secured="false"/>
+	<procedure name="getFileActionHistory" secured="false"/>
+	
+	<procedure name="procedure2"/>
+	<procedure name="unprotected" secured="false"/>
+	
+</mfp:adapter>
